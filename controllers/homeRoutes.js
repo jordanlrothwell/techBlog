@@ -14,9 +14,7 @@ router.get("/", async (req, res) => {
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
-    res.render("homepage", posts, {
-      logged_in: req.session.logged_in,
-    });
+    res.render("homepage", { posts, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -35,7 +33,8 @@ router.get("/post/:id", async (req, res) => {
 
     const post = postData.get({ plain: true });
 
-    res.render("post", ...post, {
+    res.render("post", {
+      ...post,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -46,15 +45,11 @@ router.get("/post/:id", async (req, res) => {
 router.get("/profile", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: {
-        exclude: ["password"],
-        include: [{ model: Post }],
-      },
+      attributes: { exclude: ["password"] },
+      include: [ { model: Post }]
     });
     const user = userData.get({ plain: true });
-    res.render("profile", ...user, {
-      logged_in: req.session.logged_in,
-    });
+    res.render("profile", { user, logged_in: true });
   } catch (err) {
     res.status(500).json(err);
   }
