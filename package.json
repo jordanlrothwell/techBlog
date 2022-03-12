@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jordanlrothwell/techBlog#readme",
   "dependencies": {
+    "express": "^4.17.3",
     "sequelize": "^6.17.0"
   }
 }
