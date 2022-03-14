@@ -1,122 +1,113 @@
-# 14 Model-View-Controller (MVC): Tech Blog
+<div id="top"></div>
 
-## Your Task
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept covered in this course returns thousands of think pieces and tutorials from developers of all skill levels!
 
-Your task this week is to build a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. You’ll build this site completely from scratch and deploy it to Heroku. Your app will follow the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
-## User Story
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/jordanlrothwell/techBlog">  
+  <img src="images/genericlogo.png" alt="Logo" width="80" height="80">
+  </a>
 
-```md
-AS A developer who writes about tech
-I WANT a CMS-style blog site
-SO THAT I can publish articles, blog posts, and my thoughts and opinions
-```
+  <h3 align="center">Tech Blog</h3>
 
-## Acceptance Criteria
+  <p align="center">
+    A simple blog with user authentication & relational data storage.
+    <br />
+    <a href="https://github.com/jordanlrothwell/techBlog"><strong>Jump to the code »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/jordanlrothwell/techBlog">View Demo</a>
+    ·
+    <a href="https://github.com/jordanlrothwell/techBlog/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/jordanlrothwell/techBlog/issues">Request Feature</a>
+  </p>
+</div>
 
-```md
-GIVEN a CMS-style blog site
-WHEN I visit the site for the first time
-THEN I am presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in
-WHEN I click on the homepage option
-THEN I am taken to the homepage
-WHEN I click on any other links in the navigation
-THEN I am prompted to either sign up or sign in
-WHEN I choose to sign up
-THEN I am prompted to create a username and password
-WHEN I click on the sign-up button
-THEN my user credentials are saved and I am logged into the site
-WHEN I revisit the site at a later time and choose to sign in
-THEN I am prompted to enter my username and password
-WHEN I am signed in to the site
-THEN I see navigation links for the homepage, the dashboard, and the option to log out
-WHEN I click on the homepage option in the navigation
-THEN I am taken to the homepage and presented with existing blog posts that include the post title and the date created
-WHEN I click on an existing blog post
-THEN I am presented with the post title, contents, post creator’s username, and date created for that post and have the option to leave a comment
-WHEN I enter a comment and click on the submit button while signed in
-THEN the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created
-WHEN I click on the dashboard option in the navigation
-THEN I am taken to the dashboard and presented with any blog posts I have already created and the option to add a new blog post
-WHEN I click on the button to add a new blog post
-THEN I am prompted to enter both a title and contents for my blog post
-WHEN I click on the button to create a new blog post
-THEN the title and contents of my post are saved and I am taken back to an updated dashboard with my new blog post
-WHEN I click on one of my existing posts in the dashboard
-THEN I am able to delete or update my post and taken back to an updated dashboard
-WHEN I click on the logout option in the navigation
-THEN I am signed out of the site
-WHEN I am idle on the site for more than a set time
-THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
-```
 
-## Mock-Up
 
-The following animation demonstrates the application functionality:
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#tests">Tests</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#questions">Questionsd</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-![Animation cycles through signing into the app, clicking on buttons, and updating blog posts.](./Assets/14-mvc-homework-demo-01.gif) 
 
-## Getting Started
 
-Your application’s folder structure must follow the Model-View-Controller paradigm. You’ll need to use the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views, use the [MySQL2](https://www.npmjs.com/package/mysql2) and [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect to a MySQL database for your Models, and create an Express.js API for your Controllers.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-You’ll also need the [dotenv package](https://www.npmjs.com/package/dotenv) to use environment variables, the [bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords, and the [express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) packages to add authentication.
+This project was created to practice implementing user login and data persistence functionality.
 
-**Note**: The [express-session](https://www.npmjs.com/package/express-session) package stores the session data on the client in a cookie. When you are idle on the site for more than a set time, the cookie will expire and you will be required to log in again to start a new session. This is the default behavior and you do not have to do anything to your application other than implement the npm package.
+It uses Model-View-Controller design principles to ensure its functionality is modular and adaptable.
 
-## Grading Requirements
+Check out the deployed app [here.](https://jordan-rothwell-tech-blog.herokuapp.com/)
 
-This homework is graded based on the following criteria:
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Technical Acceptance Criteria: 40%
 
-* Satisfies all of the preceding acceptance criteria plus the following:
 
-    * Application’s folder structure follows the Model-View-Controller paradigm.
+<!-- USAGE EXAMPLES -->
+## Usage
 
-    * Uses the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views.
+To run this project locally, perform the following steps:
 
-    * Application must be deployed to Heroku.
+1. Clone the repo;
+2. Run 'npm install' in the console to get dependencies;
+3. Create a .env file and populate the DB_NAME, DB_USER and DB_PASSWORD properties;
+4. Open up your MYSQL2 shell and run 'source db/schema.sql' to create the databse;
+5. Seed by running 'node seeds/seed.js';
+6. Start the server with the 'node server.js' command.
 
-### Deployment: 32%
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-* Application deployed at live URL.
 
-* Application loads with no errors.
 
-* Application GitHub URL submitted.
+<!-- TESTS -->
+## Tests
 
-* GitHub repository contains application code.
+This code has been user-tested on the deployed app, which has been seeded using the data included in the github repo. It was also tested (and, for that matter, seeded) using Insomnia.
 
-### Application Quality: 15%
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-* User experience is intuitive and easy to navigate.
 
-* User interface style is clean and polished.
 
-* Application resembles the mock-up functionality provided in the homework instructions.
 
-### Repository Quality: 13%
+<!-- LICENSE -->
+## License
 
-* Repository has a unique name.
+Distributed under the MIT license. See https://opensource.org/licenses/MIT for more information.
 
-* Repository follows best practices for file structure and naming conventions.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
 
-* Repository contains multiple descriptive commit messages.
 
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
+<!-- QUESTIONS -->
+## Questions
 
-## Review
+Email me: [jordanlrothwell@gmail.com](jordanlrothwell@gmail.com)
 
-You are required to submit BOTH of the following for review:
+Project Link: [https://github.com/jordanlrothwell/techBlog](https://github.com/jordanlrothwell/techBlog)
 
-* The URL of the functional, deployed application.
+LinkedIn: [https://linkedin.com/in/jordan-rothwell-971853128](https://linkedin.com/in/jordan-rothwell-971853128)
 
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
----
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/jordan-rothwell-971853128
