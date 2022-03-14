@@ -12,7 +12,7 @@ Post.init(
       autoIncrement: true,
     },
     title: {
-      allowNull: false,
+      type: DataTypes.TEXT,
     },
     content: {
       type: DataTypes.TEXT,
