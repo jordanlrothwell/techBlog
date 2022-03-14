@@ -13,6 +13,7 @@ Post.init(
     },
     title: {
       type: DataTypes.TEXT,
+      allowNull: false,
     },
     content: {
       type: DataTypes.TEXT,
